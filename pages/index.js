@@ -1,104 +1,95 @@
-import { Form, Select, InputNumber, Switch, Slider, Button } from 'antd'
+import { Layout, Typography, Form, Input, Button, Checkbox, Spin } from "antd";
 
-// Custom DatePicker that uses Day.js instead of Moment.js
-import DatePicker from '../components/DatePicker'
-
-import { SmileFilled } from '@ant-design/icons'
-
-import Link from 'next/link'
-
-const FormItem = Form.Item
-const Option = Select.Option
-
-const content = {
-  marginTop: '100px',
-}
+const { Header, Footer, Sider, Content } = Layout;
+const { Text, Link, Paragraph } = Typography;
 
 export default function Home() {
   return (
-    <div style={content}>
-      <div className="text-center mb-5">
-        <Link href="#">
-          <a className="logo mr-0">
-            <SmileFilled size={48} strokeWidth={1} />
-          </a>
-        </Link>
+    <Layout style={{ height: "100%" }}>
+      <Content style={{ position: "relative" }}>
+        <div
+          style={{
+            position: "absolute",
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Login />
+        </div>
+      </Content>
 
-        <p className="mb-0 mt-3 text-disabled">Welcome to the world !</p>
-      </div>
-      <div>
-        <Form layout="horizontal">
-          <FormItem
-            label="Input Number"
-            labelCol={{ span: 8 }}
-            wrapperCol={{ span: 8 }}
-          >
-            <InputNumber
-              size="large"
-              min={1}
-              max={10}
-              style={{ width: 100 }}
-              defaultValue={3}
-              name="inputNumber"
-            />
-          </FormItem>
+      <Footer style={{background: 'rgb(220,220,220)'}}>
+        <Typography>
+          <Paragraph>
+            <Text>Developed by Jimmy Wang</Text>
+          </Paragraph>
+          <Paragraph>
+            <Link href="https://github.com/jwwang2003/epsoj" target="_blank">
+              GitHub Repo
+            </Link>
+          </Paragraph>
+        </Typography>
+      </Footer>
+    </Layout>
+  );
+}
 
-          <FormItem
-            label="Switch"
-            labelCol={{ span: 8 }}
-            wrapperCol={{ span: 8 }}
-          >
-            <Switch defaultChecked name="switch" />
-          </FormItem>
+function Login() {
+  const onFinish = (values) => {
+    console.log("Success:", values);
+  };
 
-          <FormItem
-            label="Slider"
-            labelCol={{ span: 8 }}
-            wrapperCol={{ span: 8 }}
-          >
-            <Slider defaultValue={70} />
-          </FormItem>
+  return (
+    <Spin tip="Authenticating..." spinning={false}>
+      <Form
+        style={{
+          width: "300px",
+        }}
+        name="basic"
+        initialValues={{
+          remember: true,
+        }}
+        onFinish={onFinish}
+      >
+        <Form.Item
+          label="Student ID"
+          name="studentID"
+          rules={[
+            {
+              required: true,
+              message: "Student ID is required!",
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
 
-          <FormItem
-            label="Select"
-            labelCol={{ span: 8 }}
-            wrapperCol={{ span: 8 }}
-          >
-            <Select
-              size="large"
-              defaultValue="lucy"
-              style={{ width: 192 }}
-              name="select"
-            >
-              <Option value="jack">jack</Option>
-              <Option value="lucy">lucy</Option>
-              <Option value="disabled" disabled>
-                disabled
-              </Option>
-              <Option value="yiminghe">yiminghe</Option>
-            </Select>
-          </FormItem>
+        <Form.Item
+          label="Password"
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: "Password is required!",
+            },
+          ]}
+        >
+          <Input.Password />
+        </Form.Item>
 
-          <FormItem
-            label="DatePicker"
-            labelCol={{ span: 8 }}
-            wrapperCol={{ span: 8 }}
-          >
-            <DatePicker name="startDate" />
-          </FormItem>
-          <FormItem
-            style={{ marginTop: 48 }}
-            wrapperCol={{ span: 8, offset: 8 }}
-          >
-            <Button size="large" type="primary" htmlType="submit">
-              OK
-            </Button>
-            <Button size="large" style={{ marginLeft: 8 }}>
-              Cancel
-            </Button>
-          </FormItem>
-        </Form>
-      </div>
-    </div>
-  )
+        <Form.Item name="remember" valuePropName="checked">
+          <Checkbox>Remember me</Checkbox>
+        </Form.Item>
+
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            Sign In
+          </Button>
+        </Form.Item>
+      </Form>
+    </Spin>
+  );
 }
