@@ -12,14 +12,16 @@ Open http://localhost:8080 to view it in the browser.
 The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-### npm run build
-
-Builds a static copy of your site to the `build/` folder.
-Your app is ready to be deployed!
-
-**For the best production performance:** Add a build bundler plugin like "@snowpack/plugin-webpack" to your `snowpack.config.mjs` config file.
-
 ### npm test
 
-Launches the application test runner.
-Run with the `--watch` flag (`npm test -- --watch`) to run in interactive watch mode.
+Launches the test runner in the interactive watch mode.
+See the section about running tests for more information.
+
+### npm run build
+
+Builds the app for production to the `build/` folder.
+It correctly bundles Preact in production mode and optimizes the build for the best performance.
+
+### Q: What about Eject?
+
+No eject needed! Snowpack guarantees zero lock-in, and CSA strives for the same.

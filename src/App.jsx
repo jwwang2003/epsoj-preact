@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+import { h } from 'preact';
+import { useState, useEffect } from 'preact/hooks';
+import logo from './logo.png';
 import './App.css';
-import DatePicker from 'antd/es/date-picker';
 
 function App() {
-  
   // Create the count state.
   const [count, setCount] = useState(0);
   // Create the counter (+1 every second).
@@ -15,7 +14,6 @@ function App() {
   // Return the App component.
   return (
     <div className="App">
-      <DatePicker />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -27,11 +25,11 @@ function App() {
         <p>
           <a
             className="App-link"
-            href="https://reactjs.org"
+            href="https://preactjs.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            Learn Preact
           </a>
         </p>
       </header>

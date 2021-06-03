@@ -1,20 +1,6 @@
-import {h} from 'preact';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.jsx';
+import { h, render } from 'preact';
+import 'preact/devtools';
+import App from './App.js';
 import './index.css';
-// import "preact/debug";
-import 'antd/dist/antd.css'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root'),
-);
-
-// Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
-// Learn more: https://www.snowpack.dev/concepts/hot-module-replacement
-if (import.meta.hot) {
-  import.meta.hot.accept();
-}
+render(<App />, document.getElementById('root'));
