@@ -1,7 +1,10 @@
+import {h} from 'preact';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
 import './index.css';
+// import "preact/debug";
+import 'antd/dist/antd.css'
 
 ReactDOM.render(
   <React.StrictMode>
