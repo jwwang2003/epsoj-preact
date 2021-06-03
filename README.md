@@ -1,21 +1,27 @@
-# Ant Design example
+# New Project
 
-This example shows how to use Next.js along with [Ant Design of React](https://ant.design). This is intended to show the integration of this UI toolkit with the Framework.
+> ✨ Bootstrapped with Create Snowpack App (CSA).
 
-## Deploy your own
+## Available Scripts
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+### npm start
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-ant-design&project-name=with-ant-design&repository-name=with-ant-design)
+Runs the app in the development mode.
+Open http://localhost:8080 to view it in the browser.
 
-## How to use
+The page will reload if you make edits.
+You will also see any lint errors in the console.
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+### npm test
 
-```bash
-npx create-next-app --example with-ant-design with-ant-design-app
-# or
-yarn create next-app --example with-ant-design with-ant-design-app
-```
+Launches the test runner in the interactive watch mode.
+See the section about running tests for more information.
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### npm run build
+
+Builds the app for production to the `build/` folder.
+It correctly bundles Preact in production mode and optimizes the build for the best performance.
+
+### Q: What about Eject?
+
+No eject needed! Snowpack guarantees zero lock-in, and CSA strives for the same.
